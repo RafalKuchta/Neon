@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RafalWebCode.pl</title>
+    <link href="https://fonts.googleapis.com/css?family=Monda:400,700" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        overflow: hidden;
+
+
+    }
+
+    button {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        background-color: #000;
+        border: 2px solid white;
+        box-shadow: 0 0 20px yellow;
+        color: white;
+        width: 120px;
+        height: 40px;
+        font-family: monda;
+        font-weight: bold;
+        cursor: pointer;
+
+
+    }
+
+    .buttonOff {
+        box-shadow: 0 0 0px grey;
+        border: 2px solid grey;
+        color: gray;
+    }
+
+    ul {
+        margin: auto;
+        padding-left: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-family: monda;
+        font-size: 40px;
+        font-weight: bold;
+        color: yellow;
+        text-shadow: 0 0 30px yellow, 0 0 10px white;
+
+    }
+
+    li:nth-of-type(6) {
+        transform: rotate(10deg) translateY(4px);
+        animation: neon 2s infinite linear;
+    }
+
+
+    li.off {
+        opacity: 0;
+        animation: none;
+        transition: .5s linear;
+    }
+
+    @keyframes neon {
+        0% {
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        32% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: .5;
+        }
+
+        55% {
+            opacity: 1;
+        }
+
+        57% {
+            opacity: 0;
+        }
+
+        58% {
+            opacity: .2;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 0;
+        }
+
+        82% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 600px) {
+        li {
+            font-size: 20px;
+        }
+
+        button {
+
+            width: 100px;
+            height: 30px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+    }
+</style>
+
+<body>
+    <button>WYŁĄCZ</button>
+
+    <ul>
+        <li>R</li>
+        <li>A</li>
+        <li>F</li>
+        <li>A</li>
+        <li>L</li>
+        <li>W</li>
+        <li>E</li>
+        <li>B</li>
+        <li>C</li>
+        <li>O</li>
+        <li>D</li>
+        <li>.</li>
+        <li>P</li>
+        <li>L</li>
+    </ul>
+
+    <script>
+        var button = document.querySelector('button');
+        button.addEventListener("click", function () {
+
+            this.classList.toggle('buttonOff');
+
+            if (this.textContent == "WŁĄCZ") {
+                this.textContent = "WYŁĄCZ"
+            } else(this.textContent = "WŁĄCZ");
+
+            const letters = document.querySelectorAll('li');
+            for (var i = 0; letters.length > i; i++) {
+                letters[i].classList.toggle('off');
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
